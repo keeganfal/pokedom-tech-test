@@ -10,10 +10,21 @@ const container = document.querySelector(".card-container")
 
 const entry = Object.entries(pokemonArray)
 
-const filterResults = () => {
-    console.log(pokemonName.value)
-    console.log(numOfResults.value)
-    console.log(pokemonType.value)
+const filterResults = (e) => {
+    const newStr = pokemonArray.filter((pokemon) => {
+        if (pokemonName.value == pokemon.name) {
+            container.innerHTML = ""
+            container.innerHTML += 
+            `<div class="card">
+                <img id="card__image" src="${pokemon.sprite}" alt="">
+                <div class="card__content">
+                    <h2 id="card__heading">${pokemon.name}</h2>
+                    <p class="card__text">${pokemon.name} (#${pokemon.id}) is a ${pokemon.types} type pokemon</p>
+                </div>
+            </div>`;
+        }
+
+    })
 }
 
 // Going through each Pokemon object 
