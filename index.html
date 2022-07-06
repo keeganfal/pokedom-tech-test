@@ -17,9 +17,8 @@
   <body>
     <h1>PokéDom- gotta code 'em all!</h1>
     <br>
-    <label for="image-url">Enter Pokemon name</label>
-    <input type="text" name="image-url" id="image-url">
-    <button type="submit" value="Submit" id="submit-btn">Filter</button>
+    <label for="pokemon-name">Enter Pokemon name</label>
+    <input type="text" name="pokemon-name" id="pokemon-name">
     <br>
 
     <label for="num-of-results">Number of results:</label>
@@ -30,19 +29,20 @@
       <option value="40">100</option>
       <option value="50">150</option>
     </select>
-    <input type="submit">
 
     <br>
     <label for="pokemon-type">Pokemon types filter:</label>
     <select id="pokemon-type" name="pokemon-type">
-      <option value="volvo">normal</option>
-      <option value="saab">grass</option>
-      <option value="saab">poison</option>
-      <option value="fiat">water</option>
-      <option value="audi">fire</option>
-      <option value="audi">flying</option>
+      <option value="all">all</option>
+      <option value="normal">normal</option>
+      <option value="grass">grass</option>
+      <option value="poison">poison</option>
+      <option value="water">water</option>
+      <option value="fire">fire</option>
+      <option value="flying">flying</option>
     </select>
-    <input type="submit">
+
+    <button type="submit" value="Submit" id="submit-btn">Filter</button>
    
 
     <main class="card-container"></main>
