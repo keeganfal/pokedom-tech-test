@@ -1,18 +1,17 @@
 import pokemonArray from "/data/pokemon.js";
 
+// Document query selector for card container 
 const container = document.querySelector(".card-container")
 
 const entry = Object.entries(pokemonArray)
 
+// Going through each Pokemon object 
 entry.forEach(e => {
-    //console.log(e[0,1].types);
     let pokemonName = e[0,1].name.charAt(0).toUpperCase() + e[0,1].name.slice(1);
     let pokemonTypes = "";
     let arrayOfTypes = (e[0,1].types);
-   
-    //console.log(Object.entries(arrayOfTypes).length)
-    //console.log(Object.entries(arrayOfTypes)[0,1])
 
+    // Check for single or doubble Pokemon types to add "&"
     if (Object.entries(arrayOfTypes).length > 1) {
         pokemonTypes = Object.entries(arrayOfTypes)[0,0][1] +" & "+Object.entries(arrayOfTypes)[0,1][1]
     }
@@ -20,10 +19,13 @@ entry.forEach(e => {
         pokemonTypes = e[0,1].types;
     }
 
-    container.innerHTML += `<div class="card">
-    <img id="card__image" src="${e[0,1].sprite}" alt="">
-    <div class="card__content">
-    <h2 id="card__heading">${pokemonName}</h2>
-    <p class="card__text">${pokemonName} (#${e[0,1].id}) is a ${pokemonTypes} type pokemon</p>
-    </div></div>`;
+    // Manipulating the DOM to add the Pokemon data
+    container.innerHTML += 
+    `<div class="card">
+        <img id="card__image" src="${e[0,1].sprite}" alt="">
+        <div class="card__content">
+            <h2 id="card__heading">${pokemonName}</h2>
+            <p class="card__text">${pokemonName} (#${e[0,1].id}) is a ${pokemonTypes} type pokemon</p>
+        </div>
+    </div>`;
 });
