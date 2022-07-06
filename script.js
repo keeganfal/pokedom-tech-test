@@ -1,4 +1,4 @@
-import pokemonArray from "/data/pokemon.js";
+import { pokemonArray } from './data/pokemon.js';
 
 // Document query selector for card container 
 const body = document.querySelector("body")
