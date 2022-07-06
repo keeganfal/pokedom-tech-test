@@ -1,7 +1,10 @@
 import pokemonArray from "/data/pokemon.js";
 
 // Document query selector for card container 
+const body = document.querySelector("body")
 const container = document.querySelector(".card-container")
+
+//body.innerHTML += "";
 
 const entry = Object.entries(pokemonArray)
 
